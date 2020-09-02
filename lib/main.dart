@@ -32,7 +32,7 @@ class HomePagePage extends State<HomePage> {
                 image: DecorationImage(
                     fit: BoxFit.cover,
                     image: NetworkImage(
-                        'https://instagram.fhan5-5.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/95017845_106221867644515_5128090190657955399_n.jpg?_nc_ht=instagram.fhan5-5.fna.fbcdn.net&_nc_cat=107&_nc_ohc=OZXTbtjh6igAX9GHGNu&oh=4cb84e98ebc5e5313c5533ed30fc3451&oe=5F4E52C5'
+                        'https://images.unsplash.com/photo-1565786423298-4bdca4334241?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'
                         /*'https://images.unsplash.com/photo-1565786423298-4bdca4334241?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'*/))),
             child: ListView(
               children: <Widget>[
@@ -46,7 +46,7 @@ class HomePagePage extends State<HomePage> {
                         style: TextStyle(
                             fontFamily: 'Montserrat',
                             color: Colors.white,
-                            fontSize: 30.0,
+                            fontSize: 20.0,
                             fontWeight: FontWeight.bold),
                       ),
                       SizedBox(width: 10.0),
@@ -55,12 +55,12 @@ class HomePagePage extends State<HomePage> {
                         style: TextStyle(
                             fontFamily: 'Montserrat',
                             color: Colors.white,
-                            fontSize: 30.0),
+                            fontSize: 20.0),
                       )
                     ],
                   ),
                 ),
-                SizedBox(height: 125.0),
+                SizedBox(height: 50.0),
                 Container(
                   height: MediaQuery.of(context).size.height,
                   decoration: BoxDecoration(
@@ -127,7 +127,7 @@ class OptionBox extends StatelessWidget {
                         Text(name,
                             style: TextStyle(
                                 fontFamily: 'Montserrat',
-                                fontSize: 25.0,
+                                fontSize: 15.0,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold)),
                         (myicon ?? null)
