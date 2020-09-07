@@ -32,30 +32,30 @@ class HomePagePage extends State<HomePage> {
                 image: DecorationImage(
                     fit: BoxFit.cover,
                     image: NetworkImage(
-                        'https://images.unsplash.com/photo-1565786423298-4bdca4334241?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'
-                        /*'https://images.unsplash.com/photo-1565786423298-4bdca4334241?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'*/))),
+                        'https://images.unsplash.com/photo-1565786423298-4bdca4334241?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'))),
             child: ListView(
               children: <Widget>[
                 SizedBox(height: 50.0),
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
-                  child: Row(
+                  child: Wrap(
                     children: <Widget>[
                       Text(
                         'Hướng dẫn',
                         style: TextStyle(
                             fontFamily: 'Montserrat',
                             color: Colors.white,
-                            fontSize: 20.0,
+                            fontSize: 30.0,
                             fontWeight: FontWeight.bold),
                       ),
                       SizedBox(width: 10.0),
                       Text(
                         'sử dụng',
+                        overflow: TextOverflow.fade,
                         style: TextStyle(
                             fontFamily: 'Montserrat',
                             color: Colors.white,
-                            fontSize: 20.0),
+                            fontSize: 30.0),
                       )
                     ],
                   ),
@@ -110,29 +110,33 @@ class OptionBox extends StatelessWidget {
         child: Material(
             color: Colors.white.withOpacity(0.0),
             child: InkWell(
-                highlightColor: mycolor,
-                onTap: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => f));
-                },
-                child: Container(
-                    padding: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30.0)),
-                    margin: EdgeInsets.all(10.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(name,
-                            style: TextStyle(
-                                fontFamily: 'Montserrat',
-                                fontSize: 15.0,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold)),
-                        (myicon ?? null)
-                      ],
-                    )))));
+              highlightColor: mycolor,
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => f));
+              },
+              child: new Container(
+                  padding: EdgeInsets.all(15.0),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(30.0)),
+                  margin: EdgeInsets.all(10.0),
+                  child: Wrap(
+                    //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    spacing: 50.0,
+                    direction: Axis.horizontal,
+                    children: <Widget>[
+                      Text(name,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 30.0,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold)),
+                      (myicon ?? null)
+                    ],
+                  )),
+            )));
   }
 }
 
