@@ -73,7 +73,8 @@ class HomePagePage extends State<HomePage> {
                       Padding(
                         padding: EdgeInsets.only(top: 45.0),
                         child: Container(
-                            height: MediaQuery.of(context).size.height - 300.0,
+                            //color: Colors.grey,
+                            height: MediaQuery.of(context).size.height,
                             child: ListView(
                               children: <Widget>[
                                 OptionBox('Dùng Zalo', Colors.lightBlue,
@@ -105,6 +106,8 @@ class OptionBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MediaQueryData deviceInfo = MediaQuery.of(context);
+    print('Text scale: ${deviceInfo.textScaleFactor}');
     return Padding(
         padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
         child: Material(
